@@ -14,7 +14,7 @@
           questions: [ "Who are", "Why are", "When are", "Wherefore art", "What are" ],
           who: [ "we", "you", "they", "thee" ],
           encounter: [ "see", "meet", "imagine", "sense", "remember", "invite", "find" ],
-          points: [ "Misguided", "Unaligned", "Questing", "Between the lines", "Metaphorically", "In A Library", "An Experiment", "On this page", "Somewhere in time and space", "In the desert of the real", "Deep within yourself", "On the floor of the sea", "In the author's mind", "The oracle tells you:", "In the forst", "On a tall mountain", "At a clearing", "In an old book", "In a dream", "In a roll of the dice", "On the back of a great turtle", "In Lurkmore", "In Narnia", "In Fantastica", "In Cyberspace", "In the Mind", "In Middle Earth", "In the Nexus", "In Krynn", "In Earth-Sea", "Amidst the Chaos", "In the blizzard", "In the storm", "In your voyages", "In the stars", "On the moon", "On a Desert Island", "In a Pirate Ship", "In Ancient Rome", "In Ancient Greece", "In Jerusalem", "In Cairo", "In High Places", "In deep valleys", "In a lotus blossom", "Within an acorn", "In a glade", "In the dictionary", "In a stoner's puff", "In a lie", "In a great oak tree", "Among the willows", "With the Pandas", "In the Den of Wolves", "In a broken curse", "As a black Genius said", "In the Chef's meal", "The Professor's Pain", "In a game", "In the Song", "In a poem", "At night", "In a jumble of phrases", "Mother Russia", "A Ray of Sun", "In the Pacific", "That which needn't be said", "A mystic's jumble", "In the cry of multitudes", "In truth", "In the belly of a whale", "In Babel", "Beyond the mountains tall", "Where shadows sing their song", "Where forest spirits dwell", "Where I once found my love", "In low resolution", "It's a mess.", "In your field of vision", "Across the horizon", "Rising from the sands", "Entranced", "Through prison bars", "In camp", "In propaganda", "In the media", "On an old TV", "On a skipping record", "In Los Angeles", "In San Francisco", "In Canada", "In the Master's Painting", "In bed", "Slowly", "Gently", "In a cynic's sarcasm", "In a broken cult", "The bottle", "In pain", "In a loaf of bread", "In a cup of coffee", "In a cup of tea", "On your travels", "On the road", "On the slopes", "In New York City", "In amnesia", "Drunk", "Intoxicated", "Enchanted", "Disappointed", "In Math", "In a notebook", "In a crystal", "Using the method", "In the system", "On Descartes' Grid", "In a formula", "In the atom", "In war", "Peacefully", "Resting", "Jogging", "Secretly", "Lucidly", "Remembering an old friend", "Remembering your childhood", "Tearlessly", "Fearlessly", "Together", "In an old video game", "On an old tape", "On a disk", "On a plate", "In a tower", "On the parapets", "By the fountain", "In a dirty joke", "In sickness", "In joy", "In dogma", "In the Hermitage", "In an ark", "Under an arch", "In the future", "In the past", "In the present", "At the crossroads", "In life", "In Jazz", "In Rock", "In Class", "At The Technion", "This was London!", "In Paris", "In the Bard's Work", "In the Cannon", "In a Camera", "At work" ],
+          points: [ "Misguided", "Unaligned", "Questing", "Between the lines", "Metaphorically", "In A Library", "An Experiment", "On this page", "Somewhere in time and space", "In the desert of the real", "Deep within yourself", "On the floor of the sea", "In the author's mind", "The oracle tells you:", "In the forst", "On a tall mountain", "At a clearing", "In an old book", "In a dream", "In a roll of the dice", "On the back of a great turtle", "In Lurkmore", "In Narnia", "In Fantastica", "In Cyberspace", "In the Mind", "In Middle Earth", "In the Nexus", "In Krynn", "In Earth-Sea", "Amidst the Chaos", "In the blizzard", "In the storm", "In your voyages", "In the stars", "On the moon", "On a Desert Island", "In a Pirate Ship", "In Ancient Rome", "In Ancient Greece", "In Jerusalem", "In Cairo", "In High Places", "In deep valleys", "In a lotus blossom", "Within an acorn", "In a glade", "In the dictionary", "In a stoner's puff", "In a lie", "In a great oak tree", "Among the willows", "With the Pandas", "In the Den of Wolves", "In a broken curse", "As a black Genius said", "In the Chef's meal", "The Professor's Pain", "In a game", "In the Song", "In a poem", "At night", "In a jumble of phrases", "In Russia", "A Ray of Sun", "In the Pacific", "That which needn't be said", "A mystic's jumble", "In the cry of multitudes", "In truth", "In the belly of a whale", "In Babel", "Beyond the mountains tall", "Where shadows sing their song", "Where forest spirits dwell", "Where I once found my love", "In low resolution", "It's a mess.", "In your field of vision", "Across the horizon", "Rising from the sands", "Entranced", "Through prison bars", "In camp", "In propaganda", "In the media", "On an old TV", "On a skipping record", "In Los Angeles", "In San Francisco", "In Canada", "In the Master's Painting", "In bed", "Slowly", "Gently", "In a cynic's sarcasm", "In a broken cult", "The bottle", "In pain", "In a loaf of bread", "In a cup of coffee", "In a cup of tea", "On your travels", "On the road", "On the slopes", "In New York City", "In amnesia", "Drunk", "Intoxicated", "Enchanted", "Disappointed", "In Math", "In a notebook", "In a crystal", "Using the method", "In the system", "On Descartes' Grid", "In a formula", "In the atom", "In war", "Peacefully", "Resting", "Jogging", "Secretly", "Lucidly", "Remembering an old friend", "Remembering your childhood", "Tearlessly", "Fearlessly", "Together", "In an old video game", "On an old tape", "On a disk", "On a plate", "In a tower", "On the parapets", "By the fountain", "In a dirty joke", "In sickness", "In joy", "In dogma", "In the Hermitage", "In an ark", "Under an arch", "In the future", "In the past", "In the present", "At the crossroads", "In life", "In Jazz", "In Rock", "In Class", "At The Technion", "This was London!", "In Paris", "In the Bard's Work", "In the Cannon", "In a Camera", "At work" ],
           mayar: [ "Mayor", "Major", "Mayar?", "Mage", "Magi", "Maya", "Maia", "Magician" ]
         };
 
@@ -191,6 +191,11 @@
         $("#roll").click(roll);
 
         function roll() {
+
+          $("html, body").animate({ scrollTop: 0 }, "slow");
+
+          $("#chars, #names, #encounter, #question, #point").css("opacity", 0);
+          $("#chars, #names, #encounter, #question, #point").css("opacity", 1);
 
           $("#chars").html("");
           $("#names").html("");
@@ -395,6 +400,14 @@
         font-family: 'Uncial Antiqua', cursive;
         color: #94826B;
         text-shadow: 1px 1px #443A2D;
+        text-shadow: 0 0 30px;
+        opacity: 0;
+        -webkit-transition: 10s all;
+      }
+
+      .dedication {
+         opacity: .4;
+         margin-bottom: 2em;
       }
 
       #names {
@@ -404,6 +417,7 @@
         font-size: 24px;
         color: #94826B;
         text-shadow: 1px 1px #443A2D;
+        text-shadow: 0 0 30px;
       }
       .character {
         display: inline-block;
@@ -426,21 +440,41 @@
       }
       #roll {
         font-family: 'Uncial Antiqua', cursive;
-        font-size: 14px;
+        font-size: 20px;
         background: #94826B;
         text-shadow: 1px 1px rgba(255,255,255,.7);
-        margin-top: 30px;
+        margin: 30px;
+      }
+      #guide {
+        width: 50px;
+        border-radius: 100px;
+        margin-top: 100px;
+      }
+      #task {
+        background: rgba(255,255,255,.1);
+        padding-bottom: 100px;
+      }
+      #stage {
+        background: black;
+        height: 100px;
+        margin-top: -30px;
+        background: url("stage.jpg");
+        opacity: .15;
       }
     </style>
   </head>
   <body>
-    <div class="dedication">For Janet &amp; Victoria</span>
+    <div class="dedication">For Janet &amp; Victoria</div>
     <h1 id="point">Somewhere in time and space...</h1>
     <h1 id="encounter">you encounter</h1>
     <h1 id="names"></h1>
     <div id="chars"></div>
-    <h1 id="question"></h1>
-    <button id="roll">Onward Bound!</button>
+    <div id="stage"></div>
+    <div id="task">
+      <img src="babel.jpg" id="guide">
+      <h1 id="question"></h1>
+      <button id="roll">Onward Bound!</button>
+    </div>
     <a href="https://github.com/yakubovich/paperdoll"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png" alt="Fork me on GitHub"></a>
   </body>
 </html>
