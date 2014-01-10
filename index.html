@@ -10,7 +10,12 @@
           femaleTitles: [ "Lady", "Miss", "Princess", "Baroness", "Madam" ],
           places: [ "Aldburg", "Argonath", "Carrock", "Dagorlad", "Dorwinion", "Eryn Vorn", "Harrowdale", "Silvermage" , "Coastedge" , "Mapleley" , "Cleardell" , "Magecastle" , "Southness" , "Colddell" , "Eriston" , "Mornesse" , "Southmerrow" , "Faybridge" , "Whitespell" , "Butteroak" , "Wintercrystal" , "Valford" , "Newwall" , "Faycrystal" , "Esterwell" , "Lochfair" , "Fairmage" , "Blueview" , "Byiron" , "Rosefog" , "Southbarrow" , "Faywald" , "Cliffbarrow" , "Marbleton" , "Bluebell" , "Whitebridge" , "Stonefox" , "Highville" , "Ironcliff" , "Blacksea" , "Spellmarsh" , "Crystalcastle" , "Fayhill" , "Dellhollow" , "Strongkeep" , "Sageshore" , "Fallwynne" , "Fallpond" , "Goldness" , "Summerston" , "Springbrook" , "Maplehurst" , "Freyley" , "Glassland" , "Jancastle" , "Summerpond" , "Stonehaven" , "Snowbay" , "Faymont" , "Bluegrass" , "Lochcrystal" , "Seacoast" , "Eriwynne" , "Landwick" , "Valnesse" , "Highdale" , "Brightview" , "Morland" , "Deerbeach" , "Osthedge" , "Valbridge" , "Havencoast" , "Butternesse" , "Silverbourne" , "Winterhedge" , "Beachmoor" , "Normount" , "Magefield" , "Springlight" , "Coldriver" , "Clearsummer" , "Morlake" , "Pinehedge" , "Fallgold" , "Clearlake" , "Newwynne" , "Wheatholt" , "Lochcastle" ], 
           adj : [ "Merry", "Noble", "Notorious", "Infamous", "Mysterious", "Pious", "Old Fashioned", "Glamorous", "Red", "Yellow", "Blue", "Gray", "Golden", "Black", "Fierce", "Brave", "Proud", "Zealous", "Exotic", "Drunken", "Dark", "Elite", "Secret", "Wholesome", "Vengeful" ],
-          group: [ "Band", "Party", "Group", "Company", "Bunch", "Pack", "Gang", "Adventurers", "Companions", "Marauders", "Brigands", "Clan", "Seekers", "Militia", "Entourage" ]
+          group: [ "Band", "Party", "Group", "Company", "Bunch", "Pack", "Gang", "Adventurers", "Companions", "Marauders", "Brigands", "Clan", "Seekers", "Militia", "Entourage" ],
+          questions: [ "Who are", "Why are", "When are", "Wherefore art", "What are" ],
+          who: [ "we", "you", "they", "thee" ],
+          encounter: [ "see", "meet", "imagine", "sense", "remember", "invite", "find" ],
+          points: [ "On this page", "Somewhere in time and space", "In the desert of the real", "Deep within yourself", "On the floor of the sea", "In the author's mind", "The oracle tells you:", "In the forst", "On a tall mountain", "At a clearing", "In an old book", "In a dream", "In a roll of the dice", "On the back of a great turtle", "In Lurkmore", "In Narnia", "In Fantastica", "In Cyberspace", "In the Mind", "In Middle Earth", "In the Nexus", "In Krynn", "In Earth-Sea", "Amidst the Chaos", "In the blizzard", "In the storm", "In your voyages", "In the stars", "On the moon", "On a Desert Island", "In a Pirate Ship", "In Ancient Rome", "In Ancient Greece", "In Jerusalem", "In the Song", "In the belly of a whale", "In Babel", "Beyond the mountains tall", "Where shadows sing their song", "Where forest spirits dwell", "Where I once found my love" ],
+          mayar: [ "Mayor", "Major", "Mayar?", "Mage", "Magi", "Maya", "Maia", "Magician" ]
         };
 
         var femaleSprites = {
@@ -189,6 +194,9 @@
 
           $("#chars").html("");
           $("#names").html("");
+          $("#encounter").html("You " + generateEncounter());
+          $("#question").html(generateQuestion);
+          $("#point").html(generatePoint);
 
           var chars = Math.floor(Math.random() * 8) + 1;
 
@@ -217,6 +225,7 @@
           $(".character").delay(200).addClass("clear");
         }
 
+        /* Generate a random name. Pass true for a female name. */
         function generateName(female) {
           var title = "", place = "";
           var firstName = female ? pickOne(names.female) : pickOne(names.male);
@@ -230,10 +239,100 @@
           return title + firstName + place;
         }
 
+        /* Generate a group name */
         function generateGroup() {
           return "The " + pickOne(names.adj) + " " + pickOne(names.group);
         }
 
+        /* Generate encounter */
+        function generateEncounter() {
+          return pickOne(names.encounter);
+        }
+
+        /* Generate a question */
+        function generateQuestion() {
+          if (Math.random() > 0.8)
+            return "Your riddle: \"" + pickOne(names.questions) + " " + pickOne(names.who) + "?\"";
+          else if (Math.random() > 0.5)
+            return "How can you help them?";
+          else if (Math.random() > 0.5)
+            return "How can they help you?";
+          else if (Math.random() > 0.5)
+            return "What do you tell them?";
+          else if (Math.random() > 0.5)
+            return "What is their problem?";
+          else if (Math.random() > 0.5)
+            return "For you? Anything.";
+          else if (Math.random() > 0.5)
+            return "Speak, Friend, and Enter.";
+          else if (Math.random() > 0.5)
+            return "Shalom Aleichem!";
+          else if (Math.random() > 0.5)
+            return "Bienvenue!";
+          else if (Math.random() > 0.5)
+            return "Please draw this moment!";
+          else if (Math.random() > 0.5)
+            return "Please cherish this moment.";
+          else if (Math.random() > 0.5)
+            return "Please make this moment last a while.";
+          else if (Math.random() > 0.5)
+            return "Speak louder.";
+          else if (Math.random() > 0.5)
+            return "Good day.";
+          else if (Math.random() > 0.5)
+            return "What time is it?";
+          else if (Math.random() > 0.5)
+            return "What day is it?";
+          else if (Math.random() > 0.5)
+            return "LOL you so random!";
+          else if (Math.random() > 0.5)
+            return "Should you listen to them?";
+          else if (Math.random() > 0.5)
+            return "What is your quest?";
+          else if (Math.random() > 0.5)
+            return "What is your name?";
+          else if (Math.random() > 0.5)
+            return "Is it real?";
+          else if (Math.random() > 0.5)
+            return "Am I real?";
+          else if (Math.random() > 0.5)
+            return "Are we in space?";
+          else if (Math.random() > 0.5)
+            return "We're not in Kansas anymore...";
+          else if (Math.random() > 0.5)
+            return "Follow the white rabbit";
+          else if (Math.random() > 0.5)
+            return "Don't hurt them";
+          else if (Math.random() > 0.5)
+            return "Am I to judge them?";
+          else if (Math.random() > 0.5)
+            return "Look at a mirror.";
+          else if (Math.random() > 0.5)
+            return "You know who you are.";
+          else if (Math.random() > 0.5)
+            return "Think with your heart.";
+          else if (Math.random() > 0.5)
+            return "Read between the lines.";
+          else if (Math.random() > 0.5)
+            return "Glad to see you again, Sir.";
+          else if (Math.random() > 0.5)
+            return "It's been so long.";
+          else if (Math.random() > 0.5)
+            return "I remember you!";
+          else if (Math.random() > 0.5)
+            return "Know Thyself";
+          else if (Math.random() > 0.5)
+            return "γνῶθισεαυτόν";
+          else if (Math.random() > 0.5)
+            return "Are you the " + pickOne(names.mayar) + "?";
+        }
+
+        /* Generate a point */
+        function generatePoint() {
+          return pickOne(names.points);
+        }
+
+        /* Pick a random element from an object */
         function pickOne(from) {
           //return from[Math.floor(Math.random() * from.length)];
           var count = 0;
@@ -247,6 +346,7 @@
           return from[result];
         }
 
+        /* Add a random male or female character with an optional uniform */
         function addChar(female, uniform) {
           var $char = $("<div>").addClass("character");
           var img;
@@ -271,6 +371,7 @@
           $char.appendTo($("#chars"));
         }
 
+        /* Load all sprite images */
         function loadImages(sprites) {
           for (var i in sprites) {
             for (var j in sprites[i]) {
@@ -292,7 +393,7 @@
         text-align: center;
         font-family: 'Uncial Antiqua', cursive;
         color: #94826B;
-        text-shadow: 2px 2px #443A2D;
+        text-shadow: 1px 1px #443A2D;
       }
       #names {
         text-align: center;
@@ -300,7 +401,7 @@
         font-family: 'Uncial Antiqua', cursive;
         font-size: 24px;
         color: #94826B;
-        text-shadow: 2px 2px #443A2D;
+        text-shadow: 1px 1px #443A2D;
       }
       .character {
         display: inline-block;
@@ -331,10 +432,12 @@
     </style>
   </head>
   <body>
-    <h1>You encounter...</h1>
-    <div id="names"></div>
+    <h1 id="point">Somewhere in time and space...</h1>
+    <h1 id="encounter">you encounter</h1>
+    <h1 id="names"></h1>
     <div id="chars"></div>
-    <button id="roll">Roll Another</button>
+    <h1 id="question"></h1>
+    <button id="roll">Onward Bound!</button>
     <a href="https://github.com/yakubovich/paperdoll"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png" alt="Fork me on GitHub"></a>
   </body>
 </html>
